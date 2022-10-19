@@ -1,11 +1,21 @@
-import express, { Application, Request, Response } from 'express'
+import express from "express";
 
-const app: Application = express()
-const port: number = 3000
+import router from "./routes/router";
 
-app.get("/world", (req: Request, res: Response) => {
- res.send("Hello World")
-})
-app.listen(port, function () {
- console.log(`App is listening on port ${port} !`)
-})
+import cors from "cors";
+class App {
+    public app: express.Application;
+
+    constructor() {
+        this.app = express();
+
+        this.app.use(
+            cors({ credentials: true, origin: process.env.CLIENT_URL })
+        );
+        this.app.use(express.json());
+
+        this.app.use("/", router);
+    }
+}
+
+export default new App().app;
