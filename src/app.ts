@@ -1,8 +1,8 @@
-import express from "express";
+import * as express from "express";
 
 import router from "./routes/router";
 
-import cors from "cors";
+import * as cors from "cors";
 class App {
     public app: express.Application;
 
