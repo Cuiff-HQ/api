@@ -1,5 +1,4 @@
 import { AppDataSource } from "./data-source";
-import { User } from "./entity/User";
 
 import * as dotenv from "dotenv";
 dotenv.config();
@@ -12,15 +11,6 @@ AppDataSource.initialize()
         app.listen(PORT, () => {
             console.info(`Running on port ${PORT}`);
         });
+        return app;
     })
     .catch((error) => console.log(error));
-
-/*
-import { createConnection } from "typeorm";
-
-createConnection()
-	.then((connection) => {
-		
-	})
-	.catch(console.error);
-*/
