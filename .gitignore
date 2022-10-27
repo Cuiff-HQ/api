@@ -16,3 +16,6 @@ node_modules
 
 # Ignore built ts files
 dist/
+
+# AWS 
+ecs-task-definition.json
