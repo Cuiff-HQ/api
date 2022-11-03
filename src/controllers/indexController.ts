@@ -6,6 +6,14 @@ import { userService } from "../services/entityServices/userService";
 
 export const indexController = Router();
 
+// DONT DELETE THIS ENDPOINT! IMPORTANT FOR DEPLOYMENT
+indexController.get(
+    "/health-check",
+    asyncHandler(async (req: Request, res: Response) => {
+        res.status(200).send();
+    })
+);
+
 indexController.get(
     "/hello-world",
     asyncHandler(async (req: Request, res: Response) => {
