@@ -1,0 +1,22 @@
+{
+    "family": "zetted-api",
+    "executionRoleArn": "arn:aws:iam::217906858583:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "zetted-api",
+            "image": "217906858583.dkr.ecr.eu-central-1.amazonaws.com/zetted-api:latest",
+            "portMappings": [
+                {
+                    "containerPort": 3001,
+                    "hostPort": 3001,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "512",
+    "memory": "1024"
+}

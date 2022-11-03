@@ -18,4 +18,4 @@ node_modules
 dist/
 
 # AWS 
-ecs-task-definition.json
+# ecs-task-definition.json
